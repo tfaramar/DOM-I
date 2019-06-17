@@ -9,7 +9,7 @@ const siteContent = {
     "img-src": "img/logo.png"
   },
   "cta": {
-    "h1": "DOM Is Awesome",
+    "h1": "DOM <br> Is <br> Awesome",
     "button": "Get Started",
     "img-src": "img/header-img.png"
   },
@@ -50,11 +50,11 @@ const middleImg = document.getElementById("middle-img");
 middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
 //Buttons
-const ctaButton = document.querySelector(".cta-text button").innerText =
+const ctaButton = document.querySelector(".cta-text button").innerHTML =
 siteContent["cta"]["button"];
 
 // Headers
-const title = document.querySelector(".cta-text h1").innerText = siteContent["cta"]["h1"];
+const title = document.querySelector(".cta-text h1").innerHTML = siteContent["cta"]["h1"];
 
 const headers = document.querySelectorAll("h4");
 headers[0].textContent = siteContent["main-content"]["features-h4"]
@@ -66,6 +66,8 @@ headers[5].textContent = siteContent["contact"]["contact-h4"]
 
 
 // Navigation
+const nav = document.querySelector("nav");
+
 const navLinks = document.querySelectorAll("nav a");
 navLinks.forEach(link => link.style.color = "green");
 navLinks[0].textContent = siteContent["nav"]["nav-item-1"]
@@ -74,6 +76,16 @@ navLinks[2].textContent = siteContent["nav"]["nav-item-3"]
 navLinks[3].textContent = siteContent["nav"]["nav-item-4"]
 navLinks[4].textContent = siteContent["nav"]["nav-item-5"]
 navLinks[5].textContent = siteContent["nav"]["nav-item-6"]
+
+const newLink1 = document.createElement("a");
+newLink1.textContent = "Blog";
+newLink1.style.color = "green";
+nav.appendChild(newLink1);
+
+const newLink2 = document.createElement("a");
+newLink2.textContent = "Team";
+newLink2.style.color = "green";
+nav.prepend(newLink2);
 
 //Paragraphs
 const paragraphs = document.querySelectorAll("p");
